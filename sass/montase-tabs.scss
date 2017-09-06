@@ -5,6 +5,8 @@
 	.tabs-material__list {
 		padding: 15px 50px 20px 0;
 		border-bottom: 1px solid rgba(191, 167, 123, .2);
+		display: inline-block;
+		float: left;
 		&:first-child {
 			padding-left: 0;
 		}
@@ -17,6 +19,7 @@
 			letter-spacing: 0;
 			opacity: .3;
 			cursor: pointer;
+			text-decoration: none;
 		}
 		&.active {
 			> a {
@@ -29,7 +32,7 @@
 
 .tabs-material-line {
 	position: absolute;
-	bottom: 0;
+	bottom: 4px;
 	left: 0;
 	right: 0;
 	display: block;

@@ -1,7 +1,7 @@
 +function($) {
 	'use strict'
 
-	var tabs 		= '[data-role="tabs-material"]'
+	var tabs 	= '[data-role="tabs-material"]'
 	var navTabs = '.nav-tabs'
 
 	var MontaseTabs = function(el) {
@@ -42,8 +42,8 @@
 			var currentIndex = $nav.index($currentList)
 			var space50 = MontaseTabs.prototype.getSpace50($parent)
 			var $list = $parent
-										.find('.tabs-material__list')
-										.eq(indexListActiveBefore)
+							.find('.tabs-material__list')
+							.eq(indexListActiveBefore)
 
 			var space = sumSpace()
 			return space50 + space
@@ -61,8 +61,8 @@
 
 		function getIndexListActive() {
 			var index = $parent
-										.find('.tabs-material__list.active')
-										.index()
+							.find('.tabs-material__list.active')
+							.index()
 			return index
 		}
 	}
@@ -126,9 +126,9 @@
 
 		function getFirstListWidth() { 
 			return $parent
-							.find('.tabs-material__list')
-							.first()
-							.width()
+					.find('.tabs-material__list')
+					.first()
+					.width()
 		}
 	}
 
@@ -155,4 +155,6 @@
 			MontaseTabs.prototype.setupTabsLine($this)
 		})
 	})
+
+	$(document).on('click.mt.montasetabs.data-api', tabs, MontaseTabs.prototype.show)
 }(jQuery)
