@@ -40,7 +40,7 @@
 	background-color: #000;
 	z-index: 9;
 	width: 0;
-	will-change: transform, width; // for optimazing animate
+	will-change: transform, width; // for optimazing animat
 	transition: transform .6s cubic-bezier(0.25, 0.1, 0, 1), width .6s cubic-bezier(0.25, 0.1, 0, 1);
 }
 
