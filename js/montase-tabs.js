@@ -8,7 +8,7 @@
 		$(el).on('click', tabs, this.show)
 	}
 
-	MontaseTabs.VERSION = '1.0.0[BETA]'
+	MontaseTabs.VERSION = '1.1.1[BETA]'
 
 	MontaseTabs.AUTHOR = 'thofikwiranata15@gmail.com'
 
@@ -36,7 +36,7 @@
 
     function getSpace() {
       var currentIndex = $nav.index($currentList)
-      var space50 = getSpace50($parent)
+      var space50 = getHalfSpaceEl($parent)
       var $list = $parent
               .find('.tabs-material__list')
               .eq(indexListActiveBefore)
@@ -64,10 +64,10 @@
 	}
 
   MontaseTabs.prototype.setupTabsLine = function(parentNav) {
-    var $parent = $(parentNav)
+    var $parent   = $(parentNav)
     // space50 => setengah space antara margin tabs dengan parent
-    var space50 = getSpace50($parent)
-    var $line = $parent.find('.tabs-material-line')
+    var space50   = getHalfSpaceEl($parent)
+    var $line     = $parent.find('.tabs-material-line')
     var widthList = getFirstListWidth()
         
     $line
@@ -110,7 +110,7 @@
     }, 50);
   }
 
-	function getSpace50($parent) {
+	function getHalfSpaceEl($parent) {
 		var haveGutter = $parent.attr('data-tabs-gutter')
 
 		var gutter = typeof haveGutter === 'undefined' ? 0 : haveGutter
@@ -130,13 +130,13 @@
 
 	// TABS MATERIAL PLUGIN DEFINITION
 	// ========================
-	function Plugin() {
+	function Plugin(option) {
 		return this.each(function () {
 			var $this   = $(this)
 			var data    = $this.data('mt.montasetabs')
 				    
 			if (!data) $this.data('mt.montasetabs', (data = new MontaseTabs(this)))
-			if (typeof option == 'string') data[option]
+			if (typeof option == 'string') data[option](this)
 		})
 	}
 
